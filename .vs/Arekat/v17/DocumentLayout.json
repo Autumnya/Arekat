@@ -1,0 +1,308 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "L:\\Projects\\Arekat\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|l:\\projects\\arekat\\vueapp1.server\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|solutionrelative:vueapp1.server\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|l:\\projects\\arekat\\vueapp1.server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|solutionrelative:vueapp1.server\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|l:\\projects\\arekat\\vueapp1.server\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|solutionrelative:vueapp1.server\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|l:\\projects\\arekat\\vueapp1.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|solutionrelative:vueapp1.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|l:\\projects\\arekat\\vueapp1.server\\basecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|solutionrelative:vueapp1.server\\basecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|l:\\projects\\arekat\\vueapp1.server\\entities\\basememberuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|solutionrelative:vueapp1.server\\entities\\basememberuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|l:\\projects\\arekat\\vueapp1.server\\entities\\chartinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|solutionrelative:vueapp1.server\\entities\\chartinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|l:\\projects\\arekat\\vueapp1.server\\entities\\storeuid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|solutionrelative:vueapp1.server\\entities\\storeuid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|l:\\projects\\arekat\\vueapp1.server\\entities\\songinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|solutionrelative:vueapp1.server\\entities\\songinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|l:\\projects\\arekat\\vueapp1.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|solutionrelative:vueapp1.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|l:\\projects\\arekat\\vueapp1.server\\changelog.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|solutionrelative:vueapp1.server\\changelog.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|l:\\projects\\arekat\\vueapp1.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|solutionrelative:vueapp1.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|l:\\projects\\arekat\\vueapp1.server\\arekat.server.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|solutionrelative:vueapp1.server\\arekat.server.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AC182E6-400C-42CF-94CB-1651F2CA90B7}|vueapp1.client\\arekat.client.esproj|l:\\projects\\arekat\\vueapp1.client\\arekat.client.esproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9AC182E6-400C-42CF-94CB-1651F2CA90B7}|vueapp1.client\\arekat.client.esproj|solutionrelative:vueapp1.client\\arekat.client.esproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|l:\\projects\\arekat\\vueapp1.server\\arekat.server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|solutionrelative:vueapp1.server\\arekat.server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|l:\\projects\\arekat\\vueapp1.server\\arekat.server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5767D04E-07A8-4B0C-BD9F-C1718DE67FE5}|VueApp1.Server\\Arekat.Server.csproj|solutionrelative:vueapp1.server\\arekat.server.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AC182E6-400C-42CF-94CB-1651F2CA90B7}|vueapp1.client\\arekat.client.esproj|l:\\projects\\arekat\\vueapp1.client\\vite.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{9AC182E6-400C-42CF-94CB-1651F2CA90B7}|vueapp1.client\\arekat.client.esproj|solutionrelative:vueapp1.client\\vite.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AC182E6-400C-42CF-94CB-1651F2CA90B7}|vueapp1.client\\arekat.client.esproj|l:\\projects\\arekat\\vueapp1.client\\.eslintrc.cjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{9AC182E6-400C-42CF-94CB-1651F2CA90B7}|vueapp1.client\\arekat.client.esproj|solutionrelative:vueapp1.client\\.eslintrc.cjs||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\VueApp1.Server\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "VueApp1.Server\\Controllers\\UserController.cs",
+              "ToolTip": "L:\\Projects\\Arekat\\VueApp1.Server\\Controllers\\UserController.cs",
+              "RelativeToolTip": "VueApp1.Server\\Controllers\\UserController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-12T10:54:52.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StoreUid.cs",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\VueApp1.Server\\Entities\\StoreUid.cs",
+              "RelativeDocumentMoniker": "VueApp1.Server\\Entities\\StoreUid.cs",
+              "ToolTip": "L:\\Projects\\Arekat\\VueApp1.Server\\Entities\\StoreUid.cs",
+              "RelativeToolTip": "VueApp1.Server\\Entities\\StoreUid.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T08:56:35.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\VueApp1.Server\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "VueApp1.Server\\Properties\\launchSettings.json",
+              "ToolTip": "L:\\Projects\\Arekat\\VueApp1.Server\\Properties\\launchSettings.json",
+              "RelativeToolTip": "VueApp1.Server\\Properties\\launchSettings.json",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-11T11:06:41.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ChartInfo.cs",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\VueApp1.Server\\Entities\\ChartInfo.cs",
+              "RelativeDocumentMoniker": "VueApp1.Server\\Entities\\ChartInfo.cs",
+              "ToolTip": "L:\\Projects\\Arekat\\VueApp1.Server\\Entities\\ChartInfo.cs",
+              "RelativeToolTip": "VueApp1.Server\\Entities\\ChartInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T08:53:28.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SongInfo.cs",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\VueApp1.Server\\Entities\\SongInfo.cs",
+              "RelativeDocumentMoniker": "VueApp1.Server\\Entities\\SongInfo.cs",
+              "ToolTip": "L:\\Projects\\Arekat\\VueApp1.Server\\Entities\\SongInfo.cs",
+              "RelativeToolTip": "VueApp1.Server\\Entities\\SongInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T10:30:37.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\VueApp1.Server\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "VueApp1.Server\\WeatherForecast.cs",
+              "ToolTip": "L:\\Projects\\Arekat\\VueApp1.Server\\WeatherForecast.cs",
+              "RelativeToolTip": "VueApp1.Server\\WeatherForecast.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T07:02:58.706Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\VueApp1.Server\\Program.cs",
+              "RelativeDocumentMoniker": "VueApp1.Server\\Program.cs",
+              "ToolTip": "L:\\Projects\\Arekat\\VueApp1.Server\\Program.cs",
+              "RelativeToolTip": "VueApp1.Server\\Program.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-16T09:31:25.627Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\VueApp1.Server\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "VueApp1.Server\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "L:\\Projects\\Arekat\\VueApp1.Server\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "VueApp1.Server\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB0AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T07:02:13.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BaseMemberUser.cs",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\VueApp1.Server\\Entities\\BaseMemberUser.cs",
+              "RelativeDocumentMoniker": "VueApp1.Server\\Entities\\BaseMemberUser.cs",
+              "ToolTip": "L:\\Projects\\Arekat\\VueApp1.Server\\Entities\\BaseMemberUser.cs",
+              "RelativeToolTip": "VueApp1.Server\\Entities\\BaseMemberUser.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T08:49:09.525Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BaseContext.cs",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\VueApp1.Server\\BaseContext.cs",
+              "RelativeDocumentMoniker": "VueApp1.Server\\BaseContext.cs",
+              "ToolTip": "L:\\Projects\\Arekat\\VueApp1.Server\\BaseContext.cs",
+              "RelativeToolTip": "VueApp1.Server\\BaseContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-11T08:48:43.327Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CHANGELOG.md",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\VueApp1.Server\\CHANGELOG.md",
+              "RelativeDocumentMoniker": "VueApp1.Server\\CHANGELOG.md",
+              "ToolTip": "L:\\Projects\\Arekat\\VueApp1.Server\\CHANGELOG.md",
+              "RelativeToolTip": "VueApp1.Server\\CHANGELOG.md",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2024-08-12T07:40:01.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\VueApp1.Server\\appsettings.json",
+              "RelativeDocumentMoniker": "VueApp1.Server\\appsettings.json",
+              "ToolTip": "L:\\Projects\\Arekat\\VueApp1.Server\\appsettings.json",
+              "RelativeToolTip": "VueApp1.Server\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-11T11:05:42.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Arekat.Server.http",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\VueApp1.Server\\Arekat.Server.http",
+              "RelativeDocumentMoniker": "VueApp1.Server\\Arekat.Server.http",
+              "ToolTip": "L:\\Projects\\Arekat\\VueApp1.Server\\Arekat.Server.http",
+              "RelativeToolTip": "VueApp1.Server\\Arekat.Server.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-07-19T07:02:46.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "arekat.client.esproj",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\vueapp1.client\\arekat.client.esproj",
+              "RelativeDocumentMoniker": "vueapp1.client\\arekat.client.esproj",
+              "ToolTip": "L:\\Projects\\Arekat\\vueapp1.client\\arekat.client.esproj",
+              "RelativeToolTip": "vueapp1.client\\arekat.client.esproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-08-11T11:07:56.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Arekat.Server.csproj",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\VueApp1.Server\\Arekat.Server.csproj",
+              "RelativeDocumentMoniker": "VueApp1.Server\\Arekat.Server.csproj",
+              "ToolTip": "L:\\Projects\\Arekat\\VueApp1.Server\\Arekat.Server.csproj",
+              "RelativeToolTip": "VueApp1.Server\\Arekat.Server.csproj",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-11T11:06:27.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Arekat.Server",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\VueApp1.Server\\Arekat.Server.csproj",
+              "RelativeDocumentMoniker": "VueApp1.Server\\Arekat.Server.csproj",
+              "ToolTip": "L:\\Projects\\Arekat\\VueApp1.Server\\Arekat.Server.csproj",
+              "RelativeToolTip": "VueApp1.Server\\Arekat.Server.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-11T11:06:38.016Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "vite.config.js",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\vueapp1.client\\vite.config.js",
+              "RelativeDocumentMoniker": "vueapp1.client\\vite.config.js",
+              "ToolTip": "L:\\Projects\\Arekat\\vueapp1.client\\vite.config.js",
+              "RelativeToolTip": "vueapp1.client\\vite.config.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-16T09:37:33.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": ".eslintrc.cjs",
+              "DocumentMoniker": "L:\\Projects\\Arekat\\vueapp1.client\\.eslintrc.cjs",
+              "RelativeDocumentMoniker": "vueapp1.client\\.eslintrc.cjs",
+              "ToolTip": "L:\\Projects\\Arekat\\vueapp1.client\\.eslintrc.cjs",
+              "RelativeToolTip": "vueapp1.client\\.eslintrc.cjs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-16T09:37:28.714Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "BroUMLL1kYWQVaKcLuOlrMcctY1sH/aK598AipQzgdE=",
+  "Source": "Arekat.Server",
+  "BasePath": "_content/Arekat.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "L:\\Projects\\Arekat\\vueapp1.client\\arekat.client.esproj",
+      "Version": 2,
+      "Source": "arekat.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

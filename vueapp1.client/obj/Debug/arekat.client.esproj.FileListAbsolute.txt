@@ -1,0 +1,2 @@
+L:\Projects\VueApp1\vueapp1.client\obj\Debug\arekat.client.esproj.CoreCompileInputs.cache
+L:\Projects\Arekat\vueapp1.client\obj\Debug\arekat.client.esproj.CoreCompileInputs.cache

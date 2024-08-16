@@ -1,0 +1,15 @@
+.main_container{
+    background-color: rgb(126, 44, 220);
+    border: 0px;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 1px 1px 3px grey;
+    position: relative;
+}
+.sub_container{
+    align-items: center;
+    text-align: center;
+    width: 61.8%;
+    position: relative;
+    margin: 24px auto;
+}

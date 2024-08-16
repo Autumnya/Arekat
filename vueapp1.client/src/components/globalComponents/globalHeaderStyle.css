@@ -1,0 +1,72 @@
+.header_component{
+    align-items: center;
+    color: rgb(220, 220, 220);
+    display: flex;
+    margin: 0px 6px;
+    position: relative;
+    height: 66px;
+}
+.header_clickable_text{
+    text-align: center;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 16px;
+    font-family: PingFang SC,HarmonyOS_Regular,Helvetica Neue,Microsoft YaHei,sans-serif!important;
+    cursor: pointer;
+    user-select: none;
+    margin: 0px auto;
+    font-weight: bold;
+}
+.dropmenu_component{
+    cursor: pointer;
+    align-items: center;
+    height: 40px;
+}
+.dropdown_menu{
+    background-color: rgba(240,240,240,0.65);
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: rgba(180, 180, 180, 0.75);
+    position: absolute;
+    padding: 10px;
+    width: 100%;
+    display: block;
+    z-index: 20;
+    text-align: center;
+    box-shadow: 0px 0px 2px rgb(220, 220, 220);
+    right: 0px;
+    top: 44px;
+    cursor: initial;
+}
+.dropmenu_item{
+    font-family: PingFang SC,HarmonyOS_Regular,Helvetica Neue,Microsoft YaHei,sans-serif!important;
+    cursor: pointer;
+    color: black;
+    user-select: none;
+}
+.divide_line_dropdown_menu{
+    width: 50%;
+    height: 1px;
+    margin: 8px auto;
+    padding: 0px;
+    background-color: rgb(180,180,180);
+}
+.icon{
+    color: rgb(220, 220, 220);
+    margin: 0 6px;
+}
+
+.drop_fade-enter-active,.drop_fade-leave-active {
+    transition: all 0.2s ease;
+}
+.drop_fade-enter-from,.drop_fade-leave-to {
+    opacity: 0;
+    top: 34px;
+}
+.clear_float::before,.clear_float::after{
+    content: "";
+    display: table;
+}
+.clear_float::before{
+    clear: both;
+}
