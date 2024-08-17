@@ -3,15 +3,17 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeIndex from "@/components/HomeIndex.vue";
 import ChartForm from "@/components/ChartForm.vue";
 import NoticeList from "@/components/NoticeList.vue";
-import UserProfile from "@/components/UserProfile.vue";
-
+import UserInfo from "@/components/infopageComponents/UserInfo.vue";
+import SongInfo from "@/components/infopageComponents/SongInfo.vue";
+import NoticeContent from "@/components/NoticeContent.vue";
+import ArtistInfo from "@/components/infopageComponents/ArtistInfo.vue";
 import NotFound from "@/components/NotFound.vue";
 
 //定义路由对象（规则）
 const routes = [
     {
         path:"/index",
-        name:"Index",
+        name:"index",
         component:HomeIndex
     },
     {
@@ -20,22 +22,42 @@ const routes = [
     },
     {
         path:"/charts",
-        name:"Charts",
+        name:"charts",
         component:ChartForm
     },
     {
-        path:"/notice",
-        name:"Notice",
+        path:"/chart/:chartId",
+        name:"chart",
+        component:ChartForm
+    },
+    {
+        path:"/notices",
+        name:"notices",
         component:NoticeList
     },
     {
-        path:"/userpage",
-        name:"Userpage",
-        component:UserProfile
+        path:"/notice/:noticeId",
+        name:"notice",
+        component:NoticeContent
+    },
+    {
+        path:"/user/:userId",
+        name:"user",
+        component:UserInfo
+    },
+    {
+        path:"/song/:songId",
+        name:"song",
+        component:SongInfo
+    },
+    {
+        path:"/artist/:artistId",
+        name:"artist",
+        component:ArtistInfo
     },
     {
         path:"/:pathMatch(.*)*",
-        name:"NotFound",
+        name:"notFound",
         component:NotFound
     },
 ]

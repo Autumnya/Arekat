@@ -54,7 +54,7 @@
     import { useRouter } from 'vue-router';
 
     const navList = ["首页","谱面","公告"];
-    const navRoute = ["/index","/charts","/notice"]
+    const navRoute = ["/index","/charts","/notices"]
 
     /*鼠标事件
     const selectedIndex = ref(-1);

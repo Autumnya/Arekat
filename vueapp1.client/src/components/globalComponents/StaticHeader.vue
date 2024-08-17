@@ -5,7 +5,7 @@
         <NavList />
         <SearchBox />
         <LanguageSwitch />
-        <UserInfo />
+        <SimpleUserInfo />
     </div>
 </template>
 
@@ -30,7 +30,5 @@
     import NavList from '../headerComponents/NavList.vue';
     import SearchBox from '../headerComponents/SearchBox.vue';
     import LanguageSwitch from '../headerComponents/LanguageSwitch.vue'
-    import UserInfo from '../headerComponents/UserInfo.vue';
-
-    
+    import SimpleUserInfo from '../headerComponents/SimpleUserInfo.vue';
 </script>

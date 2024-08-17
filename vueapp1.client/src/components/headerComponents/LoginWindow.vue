@@ -37,7 +37,7 @@
                             <div id="send_button"
                             @mouseenter="mouseEnterButton($event.target)"
                             @mouseleave="mouseLeaveButton($event.target)"
-                            @click="sendVerifyEmail($event.target)">
+                            @click="sendVerifyEmail()">
                                 <span id="send_button_text" :style="'color:'+currentSendButtonColor">{{ canSendVerifyCode() ? emailSenderText : '重新发送(' + emailSenderTimeRemaining + ')' }}</span>
                             </div>
                         </div>
@@ -259,7 +259,7 @@
         },1000)
     }
     //发送确认邮件
-    const sendVerifyEmail = (target) =>{
+    const sendVerifyEmail = () =>{
         if(canSendVerifyCode()){
             console.log("发了个邮件");
             store.commit('setEmailTimerRamainingTime');

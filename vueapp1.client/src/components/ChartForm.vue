@@ -1,12 +1,12 @@
 <template>
-    <div class = "sub_container">
+    <div id="chartpage_container" class = "sub_container">
         <div class="chart_form">
             <div v-for="(row,index) in chartPageInfoArray" :key="index" class = "list_row">
                 <div class="row_content">
                     <div class = "list_row_title">
                         <span class = "item_text">{{ row.name }} :</span>
                     </div>
-                    <div v-for="(row_item,sub_index) in row.item" :key="sub_index" class="list_row_item" :style="defineItemStyle(row.id,row_item)" @click="switchSelectItem($event.target)">
+                    <div v-for="(row_item,sub_index) in row.item" :key="sub_index" class="list_row_item" :style="defineItemStyle(row.id,row_item)" @click="switchSelectItem(row.id,row_item)">
                         <span class = "item_text">{{ row_item }}</span>
                     </div>
                 </div>
@@ -17,8 +17,8 @@
                     <div class = "list_row_title">
                         <span class = "item_text">关键词 :</span>  
                     </div> 
-                    <input id="keyword_inputbox">
-                    <div class="list_row_item">
+                    <input v-model="inputKeywords" id="keyword_inputbox">
+                    <div class="list_row_item" @click="searchStart()">
                         <span class = "item_text" :style="'color : ' + themeColor">搜索</span>
                     </div>
                     <div style="position:absolute; right:0px;" class="list_row_item">
@@ -27,16 +27,43 @@
                 </div>
             </div>
             <div class = "divide_line"></div>
+            <div id = "chart_info_container">
+                <div class="chart_info" v-for="(chartInfo,index) in chartsJsonObjects.charts" :key="index">
+                    <img :src="chartInfo.coverSrc" :alt="chartInfo.title" class="song_cover_img">
+                    <div class="song_info">
+                        <div class="song_title">
+                            <span @click="gotoSongInfo(chartInfo.songId)">{{ chartInfo.title }}</span>
+                        </div>
+                        <div class="artist">
+                            <span @click="gotoArtistInfo(chartInfo.artistId)">{{ chartInfo.artist }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <style scoped>
+    #chartpage_container{
+        min-width: 925px;
+    }
     #keyword_inputbox{
         border-radius: 8px;
         border: 1px solid;
         border-color: gray;
         width: 30%;
+        font-size: 16px;
+    }
+    #chart_info_container{
+        padding: 8px;
+        width: 98%;
+        margin: 0px auto;
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        background-color: rgb(240,240,240);
+        border-radius: 10px;
     }
     .chart_form{
         display: inline-block;
@@ -76,17 +103,64 @@
     .item_text{
         user-select: none;
     }
+    .chart_info{
+        width: 210px;
+        height: 280px;
+        background-color: white;
+        border-radius: 4px;
+        padding: 4px;
+        margin: 4px;
+        >.song_cover_img{
+            height: 75%;
+            cursor: pointer;
+        }
+        >.song_info{
+            height: 25%;
+            display: inline-block7;
+            >.song_title{
+                width: 95%;
+                height: 50%;
+                font-size: 26px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                padding: 0px 4px;
+                overflow: hidden;
+            }
+            >.artist{
+                width: 95%;
+                height: 40%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                padding: 0px 4px;
+                overflow: hidden;
+            }
+        }
+    }
+    .chart_info:hover{
+        box-shadow: 1px 1px 4px gray;
+    }
 </style>
 
 <script setup>
     import { computed,ref } from 'vue'
     import { useStore } from 'vuex';
+    import { useRoute,useRouter } from 'vue-router';
 
     const store = useStore();
+    const route = useRoute();
+    const router = useRouter();
     const themeColor = computed(()=>store.state.themeColor);
+    const inputKeywords = defineModel();
 
     var chartPageInfoArray = computed(() => store.state.chartStore.staticFilterInfo.filterItem);
     var chartFilter = computed(() => store.state.chartStore.currentChartFilter);
+
+    //组件更新计时器
+    const timer = ref();
+
+    inputKeywords.value = route.query.keywords;
 
     const defineItemStyle = (row_id,row_item) => {
         if(chartFilter.value[row_id].includes(row_item)){
@@ -97,36 +171,222 @@
         }
         return {};
     }
-    const switchSelectItem = (target) => {
-        
+    const switchSelectItem = (rowId,selectedItem) => {
+        store.commit('setChartFilterItem',{
+            filterName:rowId,
+            item:selectedItem
+        });
+        resetTimer();
     }
 
-    //默认为空，展示未筛选的默认谱面列表
-    //const chartFilter = ref(undefined);
-    //
-    //const games = ["Arcaea"];
-    //const examineStage = ["test","stable"];
-    //
-    //const minDiff = ref(undefined);
-    //const maxDiff = ref(undefined);
-    //const minPassDate = ref(["","",""]);
-    //const maxPassDate = ref(["","",""]);
-    //const keyWords = ref([]);
+    //筛选条件发生变化时重置定时器，无变化1000ms后刷新组件内容
+    function resetTimer()
+    {
+        clearTimeout(timer.value);
+        timer.value = setTimeout(() => refreshList(),1000);
+    }
+    function refreshList()
+    {
+        console.log("发送了一个请求");
+        //chartsJsonObjects.value = {};
+    }
 
+    const gotoSongInfo = (songId) =>{
+        router.push({name:"song",params:{songId}});
+    }
+    const gotoArtistInfo = (artistId) =>{
+        router.push({name:"artist",params:{artistId}});
+    }
+    const searchStart = () =>{
+        store.commit('setChartFilterItem',{filterName:"keywords",item:inputKeywords.value});
+        router.push({name:"charts",query:{keywords:inputKeywords.value}});
+    }
 
-
-    //该组件是否需要被更新
-    //const timer = ref(setTimeout())
-
-    //筛选条件发生变化时重置定时器，无变化500ms后刷新组件内容
-    // function ResetTimer()
-    // {
-    //     clearTimeout(timer.value);
-    //     timer.value = setTimeout(RefreshList(),500);
-    // }
-    // function RefreshList()
-    // {
-    // 
-    // }
-
+    //测试用chartResultJson
+    var chartsJsonObjects = 
+    {
+        "chartAmount":18,
+        "charts":[
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            },
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            },
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            },
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            },
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            },
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            },
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            },
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            },
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            },
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            },
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            },
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            },
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            },
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            },
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            },
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            },
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            },
+            {
+                "title":"testsongggggggggggggggggg",
+                "coverSrc":"../../src/assets/default/test_song_cover.jpg",
+                "artist": "Camellia",
+                "chartDesigner":"",
+                "bpm":"200",
+                "passDate":"2024-7-29",
+                "ratingClass":2,
+                "rating":10
+            }
+        ]
+    };
 </script>

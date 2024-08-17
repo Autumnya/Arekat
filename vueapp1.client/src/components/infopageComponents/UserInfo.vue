@@ -1,8 +1,14 @@
 //用户信息页
 <template>
-    <p>
-    </p>
+    <div>
+    
+    </div>
 </template>
+
+<style scoped>
+
+</style>
+
 <script setup>
 
 </script>

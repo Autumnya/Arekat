@@ -9,16 +9,19 @@
                 {{ reclist.subTitle }}
             </h3>
             <div class = "main_container chart_info_container">
-                <div v-for="(chartInfo,index) in reclist.chartlist.charts" :key="index" class="chartInfo">
+                <div v-for="(chartInfo,index) in reclist.chartlist.charts" :key="index" class="chart_info">
                     <img :src="chartInfo.coverSrc" :alt="chartInfo.title" class="song_cover_img">
                     <div class="song_info">
                         <div class="song_title">
-                            <span @click="lookMoreCharts(reclist.chartlist.chartFilter)">{{ chartInfo.title }}</span>
+                            <span @click="gotoSongInfo(chartInfo.songId)">{{ chartInfo.title }}</span>
                         </div>
                         <div class="artist">
-                            <span @click="lookMoreCharts(reclist.chartlist.chartFilter)">{{ chartInfo.artist }}</span>
+                            <span @click="gotoArtistInfo(chartInfo.artistId)">{{ chartInfo.artist }}</span>
                         </div>
                     </div>
+                </div>
+                <div class="look_more" @click="lookMoreCharts(reclist.chartlist.chartFilter)">
+                    <span>查看更多>></span>
                 </div>
             </div>
         </div>
@@ -61,43 +64,43 @@
         display: flex;
         overflow: auto;
     }
-    .chartInfo{
+    .chart_info{
         width: 210px;
         height: 280px;
         background-color: white;
         border-radius: 4px;
         padding: 4px;
         margin-right: 8px;
+        >.song_cover_img{
+            height: 75%;
+            cursor: pointer;
+        }
+        >.song_info{
+            height: 25%;
+            display: inline-block7;
+            >.song_title{
+                width: 95%;
+                height: 50%;
+                font-size: 26px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                padding: 0px 4px;
+                overflow: hidden;
+            }
+            >.artist{
+                width: 95%;
+                height: 40%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                padding: 0px 4px;
+                overflow: hidden;
+            }
+        }
     }
     .chartInfo:hover{
         box-shadow: 0px 0px 6px black;
-    }
-    .song_cover_img{
-        height: 75%;
-        cursor: pointer;
-    }
-    .song_info{
-        height: 25%;
-        display: inline-block7;
-    }
-    .song_title{
-        width: 95%;
-        height: 50%;
-        font-size: 26px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        padding: 0px 4px;
-        overflow: hidden;
-    }
-    .artist{
-        width: 95%;
-        height: 40%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        padding: 0px 4px;
-        overflow: hidden;
     }
     .song_title:hover{
         overflow: visible;
@@ -107,6 +110,25 @@
     .artist:hover{
         overflow: visible;
         outline: auto;
+        text-decoration: underline;
+    }
+    .look_more{
+        width: 120px;
+        height: 280px;
+        background-color: white;
+        border-radius: 4px;
+        padding: 4px;
+        cursor: pointer;
+        text-align: center;
+        display: flex;
+        font-size: 16px;
+        >span{
+            margin: auto auto;
+        }
+    }
+    .look_more:hover{
+        background-color: gray;
+        color: white;
         text-decoration: underline;
     }
 </style>
@@ -125,6 +147,13 @@
     const lookMoreCharts = (newChartFilter) =>{
         store.commit('setChartFilter',{chartFilter:newChartFilter});
         router.push('/charts');
+    }
+    
+    const gotoSongInfo = (songId) =>{
+        router.push({name:"song",params:{songId}});
+    }
+    const gotoArtistInfo = (artistId) =>{
+        router.push({name:"artist",params:{artistId}});
     }
 
     /*
@@ -162,9 +191,13 @@
                 },
                 charts:[
                     {
+                        chartId:"100001",
+                        songId:"testsongggggggggggggggggg",
                         title:"testsongggggggggggggggggg",
                         coverSrc:"../../src/assets/default/test_song_cover.jpg",
+                        artistId: "1000",
                         artist: "Camellia",
+                        chartDesignerId:"8000",
                         chartDesigner:"",
                         bpm:"200",
                         passDate:"2024-7-29",
@@ -172,9 +205,13 @@
                         rating:10
                     },
                     {
+                        chartId:"100001",
+                        songId:"testsongggggggggggggggggg",
                         title:"testsongggggggggggggggggg",
                         coverSrc:"../../src/assets/default/test_song_cover.jpg",
+                        artistId: "1000",
                         artist: "Camellia",
+                        chartDesignerId:"8000",
                         chartDesigner:"",
                         bpm:"200",
                         passDate:"2024-7-29",
@@ -182,9 +219,13 @@
                         rating:10
                     },
                     {
+                        chartId:"100001",
+                        songId:"testsongggggggggggggggggg",
                         title:"testsongggggggggggggggggg",
                         coverSrc:"../../src/assets/default/test_song_cover.jpg",
+                        artistId: "1000",
                         artist: "Camellia",
+                        chartDesignerId:"8000",
                         chartDesigner:"",
                         bpm:"200",
                         passDate:"2024-7-29",
@@ -192,9 +233,13 @@
                         rating:10
                     },
                     {
+                        chartId:"100001",
+                        songId:"testsongggggggggggggggggg",
                         title:"testsongggggggggggggggggg",
                         coverSrc:"../../src/assets/default/test_song_cover.jpg",
+                        artistId: "1000",
                         artist: "Camellia",
+                        chartDesignerId:"8000",
                         chartDesigner:"",
                         bpm:"200",
                         passDate:"2024-7-29",
@@ -202,9 +247,13 @@
                         rating:10
                     },
                     {
+                        chartId:"100001",
+                        songId:"testsongggggggggggggggggg",
                         title:"testsongggggggggggggggggg",
                         coverSrc:"../../src/assets/default/test_song_cover.jpg",
+                        artistId: "1000",
                         artist: "Camellia",
+                        chartDesignerId:"8000",
                         chartDesigner:"",
                         bpm:"200",
                         passDate:"2024-7-29",
@@ -212,9 +261,13 @@
                         rating:10
                     },
                     {
+                        chartId:"100001",
+                        songId:"testsongggggggggggggggggg",
                         title:"testsongggggggggggggggggg",
                         coverSrc:"../../src/assets/default/test_song_cover.jpg",
+                        artistId: "1000",
                         artist: "Camellia",
+                        chartDesignerId:"8000",
                         chartDesigner:"",
                         bpm:"200",
                         passDate:"2024-7-29",
@@ -244,15 +297,19 @@
                 },
                 charts:[
                     {
-                        title:"testsong",
+                        chartId:"100001",
+                        songId:"testsongggggggggggggggggg",
+                        title:"testsongggggggggggggggggg",
                         coverSrc:"../../src/assets/default/test_song_cover.jpg",
+                        artistId: "1000",
                         artist: "Camellia",
+                        chartDesignerId:"8000",
                         chartDesigner:"",
                         bpm:"200",
                         passDate:"2024-7-29",
                         ratingClass:2,
                         rating:10
-                    }
+                    },
                 ]
             }
         },
@@ -276,15 +333,19 @@
                 },
                 charts:[
                     {
-                        title:"testsong",
+                        chartId:"100001",
+                        songId:"testsongggggggggggggggggg",
+                        title:"testsongggggggggggggggggg",
                         coverSrc:"../../src/assets/default/test_song_cover.jpg",
-                        artist: "Camelliaaaaaaaaaaaaaaaaaaaaaaaaa",
+                        artistId: "1000",
+                        artist: "Camellia",
+                        chartDesignerId:"8000",
                         chartDesigner:"",
                         bpm:"200",
                         passDate:"2024-7-29",
                         ratingClass:2,
                         rating:10
-                    }
+                    },
                 ]
             }
         }]

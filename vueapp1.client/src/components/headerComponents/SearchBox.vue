@@ -21,8 +21,8 @@
                 </Transition>
                 <div class="divide_line_search_box"></div>
             </div>
-            <input class="input_box" :placeholder=defaultText[options.indexOf(currentOption)]>
-            <div class="search_component in_box_component">
+            <input v-model="inputKeywords" class="input_box" :placeholder=defaultText[options.indexOf(currentOption)]>
+            <div class="search_component in_box_component" @click="searchStart()">
                 <div class="divide_line_search_box"></div>
                 <svg t="1721709688206" class="icon" viewBox="0 0 1024 1024" version="1.1"
                     xmlns="http://www.w3.org/2000/svg" p-id="4454" width="20" height="20">
@@ -90,7 +90,12 @@
 </style>
 
 <script setup>
+    import { useStore } from 'vuex';
+    import { useRouter } from 'vue-router';
     import { ref } from 'vue';
+
+    const store = useStore();
+    const router = useRouter();
 
     const isShowingDropdownMenu = ref(false);
     const options = ["谱面","用户","主题"];
@@ -100,6 +105,7 @@
         "搜索主题"
     ]
     const currentOption = ref(options[0]);
+    const inputKeywords = defineModel();
     
     const showDropdownMenu = () => {
         isShowingDropdownMenu.value = !isShowingDropdownMenu.value;
@@ -107,5 +113,12 @@
     const changeMenuOption = (key) => {
         isShowingDropdownMenu.value = false;
         currentOption.value = options[key];
+    }
+    const searchStart = () =>{
+        if(inputKeywords.value=="")
+            return;
+        store.commit('setChartFilterItem',{FilterName:"keywords",item:inputKeywords})
+        router.push({name:"charts",query:{keywords:inputKeywords.value}});
+        inputKeywords.value="";
     }
 </script>

@@ -1,6 +1,6 @@
 //网站的logo
 <template>
-    <div id = "main_logo" class = "header_component">
+    <div id = "main_logo" class = "header_component" @click="gotoIndexpage()">
         <span class = "text_logo" >
             Arekat
         </span>
@@ -29,5 +29,11 @@
 </style>
 
 <script setup>
+    import { useRouter } from 'vue-router';
 
+    const router = useRouter();
+
+    const gotoIndexpage = () =>{
+        router.push({name:"index"});
+    }
 </script>
