@@ -10,6 +10,7 @@
     <PackageJsonScriptsPreview Condition="$(PackageJsonScriptsPreview) == ''">vite preview</PackageJsonScriptsPreview>
     <PackageJsonScriptsLint Condition="$(PackageJsonScriptsLint) == ''">eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore</PackageJsonScriptsLint>
     <PackageJsonDependenciesAxios Condition="$(PackageJsonDependenciesAxios) == ''">^1.7.2</PackageJsonDependenciesAxios>
+    <PackageJsonDependenciesCryptoJs Condition="$(PackageJsonDependenciesCryptoJs) == ''">^4.2.0</PackageJsonDependenciesCryptoJs>
     <PackageJsonDependenciesQs Condition="$(PackageJsonDependenciesQs) == ''">^6.12.3</PackageJsonDependenciesQs>
     <PackageJsonDependenciesVue Condition="$(PackageJsonDependenciesVue) == ''">^3.4.29</PackageJsonDependenciesVue>
     <PackageJsonDependenciesVueI18n Condition="$(PackageJsonDependenciesVueI18n) == ''">^9.13.1</PackageJsonDependenciesVueI18n>

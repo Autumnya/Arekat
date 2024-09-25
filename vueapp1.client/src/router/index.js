@@ -2,11 +2,14 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import HomeIndex from "@/components/HomeIndex.vue";
 import ChartForm from "@/components/ChartForm.vue";
+import UserList from "@/components/UserList.vue";
 import NoticeList from "@/components/NoticeList.vue";
 import UserInfo from "@/components/infopageComponents/UserInfo.vue";
 import SongInfo from "@/components/infopageComponents/SongInfo.vue";
 import NoticeContent from "@/components/NoticeContent.vue";
 import ArtistInfo from "@/components/infopageComponents/ArtistInfo.vue";
+import ChartInfo from "@/components/infopageComponents/ChartInfo.vue";
+import ChartUpload from "@/components/ChartUpload.vue";
 import NotFound from "@/components/NotFound.vue";
 
 //定义路由对象（规则）
@@ -21,6 +24,11 @@ const routes = [
         redirect:"/index"
     },
     {
+        path:"/chart-upload",
+        name:"chart-upload",
+        component:ChartUpload
+    },
+    {
         path:"/charts",
         name:"charts",
         component:ChartForm
@@ -28,7 +36,12 @@ const routes = [
     {
         path:"/chart/:chartId",
         name:"chart",
-        component:ChartForm
+        component:ChartInfo
+    },
+    {
+        path:"/user-search",
+        name:"user-search",
+        component:UserList
     },
     {
         path:"/notices",

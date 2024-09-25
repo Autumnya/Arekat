@@ -1,27 +1,29 @@
 <template>
     <div class = 'sub_container'>
         <NoticeBar />
-        <div v-for="(reclist,index) in reclistArray" :key="index" class="rcm_div">
-            <h2>
-                {{ reclist.mainTitle }}
-            </h2>
-            <h3>
-                {{ reclist.subTitle }}
-            </h3>
-            <div class = "main_container chart_info_container">
-                <div v-for="(chartInfo,index) in reclist.chartlist.charts" :key="index" class="chart_info">
-                    <img :src="chartInfo.coverSrc" :alt="chartInfo.title" class="song_cover_img">
-                    <div class="song_info">
-                        <div class="song_title">
-                            <span @click="gotoSongInfo(chartInfo.songId)">{{ chartInfo.title }}</span>
-                        </div>
-                        <div class="artist">
-                            <span @click="gotoArtistInfo(chartInfo.artistId)">{{ chartInfo.artist }}</span>
+        <div v-for="(reclist,index) in reclistArray" :key="index">
+            <div class="rcm_div">
+                <h2 @click="lookMoreCharts(reclist.chartlist.chartFilter)">
+                    {{ reclist.mainTitle }}
+                </h2>
+                <h3 @click="lookMoreCharts(reclist.chartlist.chartFilter)">
+                    {{ reclist.subTitle }}
+                </h3>
+                <div class = "main_container chart_info_container">
+                    <div v-for="(chartInfo,index) in reclist.chartlist.charts" :key="index" class="chart_info">
+                        <img :src="chartInfo.coverSrc" :alt="chartInfo.title" class="song_cover_img" @click="gotoChartInfo(chartInfo.chartId)">
+                        <div class="song_info">
+                            <div class="song_title">
+                                <span @click="gotoSongInfo(chartInfo.songId)">{{ chartInfo.title }}</span>
+                            </div>
+                            <div class="artist">
+                                <span @click="gotoArtistInfo(chartInfo.artistId)">{{ chartInfo.artist }}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="look_more" @click="lookMoreCharts(reclist.chartlist.chartFilter)">
-                    <span>查看更多>></span>
+                    <div class="look_more" @click="lookMoreCharts(reclist.chartlist.chartFilter)">
+                        <span>查看更多>></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,8 +101,8 @@
             }
         }
     }
-    .chartInfo:hover{
-        box-shadow: 0px 0px 6px black;
+    .chart_info:hover{
+        box-shadow: 0px 0px 12px black;
     }
     .song_title:hover{
         overflow: visible;
@@ -115,7 +117,7 @@
     .look_more{
         width: 120px;
         height: 280px;
-        background-color: white;
+        background-color: rgb(240,240,240);
         border-radius: 4px;
         padding: 4px;
         cursor: pointer;
@@ -136,13 +138,12 @@
 <script setup>
     import NoticeBar from "./homeComponents/NoticeBar.vue";
 
-    import { computed, ref } from "vue";
-    import axios from "axios";
     import { useStore } from "vuex";
     import { useRouter } from 'vue-router';
 
     const store = useStore();
     const router = useRouter();
+
 
     const lookMoreCharts = (newChartFilter) =>{
         store.commit('setChartFilter',{chartFilter:newChartFilter});
@@ -154,6 +155,9 @@
     }
     const gotoArtistInfo = (artistId) =>{
         router.push({name:"artist",params:{artistId}});
+    }
+    const gotoChartInfo = (chartId) =>{
+        router.push({name:"chart",params:{chartId}});
     }
 
     /*

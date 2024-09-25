@@ -13,3 +13,36 @@
     position: relative;
     margin: 24px auto;
 }
+
+img{
+    object-fit: cover;
+}
+
+.drop_fade-enter-active,.drop_fade-leave-active {
+    transition: all 0.2s ease;
+}
+.drop_fade-enter-from,.drop_fade-leave-to {
+    opacity: 0;
+    top: 34px;
+}
+
+.drop_smooth-enter-active{
+    animation: drop_smooth_in 0.5s;
+}
+.drop_smooth-leave-active{
+    animation: drop_smooth_in 0.5s reverse;
+}
+@keyframes drop_smooth_in{
+    0% {
+        transform: translateY(60px);
+    }
+    50% {
+        transform: translateY(40px);
+    }
+    80% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}

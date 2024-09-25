@@ -101,7 +101,7 @@
     const options = ["谱面","用户","主题"];
     const defaultText = [
         "搜索曲目、曲师、谱师",
-        "搜索用户，支持搜索关键字、id",
+        "搜索用户, 支持搜索关键字、id",
         "搜索主题"
     ]
     const currentOption = ref(options[0]);
@@ -117,8 +117,21 @@
     const searchStart = () =>{
         if(inputKeywords.value=="")
             return;
-        store.commit('setChartFilterItem',{FilterName:"keywords",item:inputKeywords})
-        router.push({name:"charts",query:{keywords:inputKeywords.value}});
-        inputKeywords.value="";
+        switch(currentOption.value)
+        {
+            case options[0]:
+                store.commit('setChartFilterItem',{filterName:"keywords",item:inputKeywords});
+                router.push({name:"charts"});
+                inputKeywords.value="";
+                break;
+            case options[1]:
+                router.push({name:"user-search",query:{keywords:inputKeywords.value}});
+                break;
+            case options[2]:
+                alert("功能暂未开放！");
+                break;
+            default:
+                break;
+        }
     }
 </script>

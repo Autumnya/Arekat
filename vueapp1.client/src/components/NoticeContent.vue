@@ -5,7 +5,7 @@
             <h3>{{ noticeJsonObject.title }}</h3>
             <span>{{ noticeJsonObject.arthor }} 发布于 {{ noticeJsonObject.publishDate }}</span>
             <div class="text_divide_line"></div>
-            <div v-html="noticeJsonObject.text" class="text_container"></div>
+            <div v-html="noticeJsonObject.htmlText" class="text_container"></div>
         </div>
     </div>
 </template>
@@ -40,7 +40,7 @@
         "title":"Arekat是什么?这是哪?",
         "arthorId":100001,
         "arthor":"ekat",
-        "text":"Arekat是一个谱面交流社区",
+        "htmlText":"Arekat是一个谱面交流社区",
         "publishDate":"2024-8-1",
         "viewTime":10
     }

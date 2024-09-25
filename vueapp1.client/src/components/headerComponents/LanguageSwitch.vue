@@ -26,7 +26,7 @@
 
 <style scoped>
     #lang_switch_container{
-        width: 20%;
+        width: 15%;
         position: relative;
     }
     .lang_switch_div{

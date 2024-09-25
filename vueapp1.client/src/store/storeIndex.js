@@ -5,23 +5,32 @@ import chartStore from "./chartStore"
 export default createStore({
   //数据，相当于data
   state: {
-    themeColor: "rgb(126, 44, 220)",
-    currentLanguage: "zh_CN",
+    "themeColor": "rgb(126, 44, 220)",
+    "currentLanguage": "zh_CN",
+    "isLogging": false,
+    "searchBoxOption": "chart",
+    "searchKeyword": "",
+    "userId":0,
+    "emailSenderTimeRemaining" : 0,
 
-    isLogging: false,
-    searchBoxOption: "chart",
-    searchKeyword: "",
-
-    emailSenderTimeRemaining : 0,
-
-    token:"",
+    "jwtToken":"",
   },
   //定义计算state数据的方法
   getters: {
-
+    apiUrl(state,className,functionName){
+      return state.apiBaseUrl + "/" + className + "/" + functionName;
+    }
   },
   //定义更改state中数据的非异步方法
   mutations: {
+    setLoginData(state,token)
+    {
+      state.jwtToken=token;
+    },
+    setUserId(state,id)
+    {
+      state.userId=id;
+    },
     setDefaultThemeColor(state){
       state.themeColor = "rgb(126, 44, 220)";
     },

@@ -14,31 +14,33 @@
                     </path>
                 </svg>
             </div>
-            <div id = "middle_container" @touchmove.prevent>
-                <div id="login_window" class="internal_window">
-                    <span id="login_title">登录到 Arekat</span>
-                    <div id="login_input_list">
-                        <span class="in_window_text_element">用户名/邮箱</span>
-                        <input class="in_window_inputbox" type="text">
-                        <span class="in_window_text_element">密码</span>
-                        <input class="in_window_inputbox" type="text">
+            <div id = "scroll_area">
+                <div id = "middle_container" @touchmove.prevent>
+                    <div id="login_window" class="internal_window">
+                        <span id="login_title">登录到 Arekat</span>
+                        <div id="login_input_list">
+                            <span class="in_window_text_element">用户名/邮箱</span>
+                            <input v-model="emailLoginInput" class="in_window_inputbox" type="text">
+                            <span class="in_window_text_element">密码</span>
+                            <input v-model="passwordLoginInput" type='password' class="in_window_inputbox">
+                        </div>
                     </div>
-                </div>
-                <div id="register_window" class="internal_window">
-                    <span id="login_title">欢迎加入 Arekat</span>
-                    <div id="login_input_list">
-                        <span class="in_window_text_element">邮箱</span>
-                        <input class="in_window_inputbox" type="text">
-                        <span class="in_window_text_element">密码</span>
-                        <input class="in_window_inputbox" type="text">
-                        <span class="in_window_text_element">邮箱验证码</span>
-                        <div id="email_verify_line">
-                            <input id = "email_verify_input" class="in_window_inputbox" type="text">
-                            <div id="send_button"
-                            @mouseenter="mouseEnterButton($event.target)"
-                            @mouseleave="mouseLeaveButton($event.target)"
-                            @click="sendVerifyEmail()">
-                                <span id="send_button_text" :style="'color:'+currentSendButtonColor">{{ canSendVerifyCode() ? emailSenderText : '重新发送(' + emailSenderTimeRemaining + ')' }}</span>
+                    <div id="register_window" class="internal_window">
+                        <span id="login_title">欢迎加入 Arekat</span>
+                        <div id="login_input_list">
+                            <span class="in_window_text_element">邮箱</span>
+                            <input v-model="emailRegeistInput" class="in_window_inputbox" type="text">
+                            <span class="in_window_text_element">密码</span>
+                            <input v-model="passwordRegeistInput" type='password' class="in_window_inputbox">
+                            <span class="in_window_text_element">邮箱验证码</span>
+                            <div id="email_verify_line">
+                                <input v-model="verifyCodeInput" id = "email_verify_input" class="in_window_inputbox" type="text">
+                                <div id="send_button"
+                                @mouseenter="mouseEnterButton($event.target)"
+                                @mouseleave="mouseLeaveButton($event.target)"
+                                @click="sendVerifyEmail()">
+                                    <span id="send_button_text" :style="'color:'+currentSendButtonColor">{{ canSendVerifyCode() ? emailSenderText : '重新发送(' + emailSenderTimeRemaining + ')' }}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -49,7 +51,7 @@
                 :style="isMouseOnRegisterButton?underlineStyle:currentColorStyle"
                 @mouseenter="mouseEnterRegisterButton()" 
                 @mouseleave="mouseLeaveRegisterButton()"
-                @click="switchLoginAndRegister()">我没有账号，注册一个</span>
+                @click="switchLoginAndRegister()">{{ isInLoginWindow ? "我没有账号，注册一个" : "返回到登录"}}</span>
                 <div id="enter_button" class="in_window_icon" 
                 @mouseenter="mouseEnterButton($event.target)"
                 @mouseleave="mouseLeaveButton($event.target)" 
@@ -78,6 +80,10 @@
         padding: 8px;
         overflow: hidden;
     }
+    #scroll_area{
+        width: 400px;
+        overflow: hidden;
+    }
     #login_window{
         height: 220px;
     }
@@ -98,10 +104,8 @@
         user-select: none;
     }
     #middle_container{
-        height: 210px;
+        height: 220px;
         width: 800px;
-        /*设置横向滚动*/ 
-        overflow: hidden;
         display: flex;
     }
     /*隐藏滚动条*/
@@ -142,7 +146,7 @@
     }
     .internal_window{
         display: inline-block;
-        width: 50%;
+        width: 400px;
     }
     .in_window_icon{
         display: flex;
@@ -189,6 +193,9 @@
 <script setup>
     import { ref,computed } from 'vue';
     import { useStore } from 'vuex';
+    import { url } from '@/api';
+    import axios from 'axios';
+    import CryptoJS from 'crypto-js';
 
     const store = useStore();
     const themeColor = computed(() => store.state.themeColor);
@@ -207,6 +214,11 @@
     const emailSenderTimer = ref();
     const emailSenderTimeRemaining = computed(()=>store.state.emailSenderTimeRemaining)
     const canSendVerifyCode = () => {return emailSenderTimeRemaining.value <= 0};
+    const emailLoginInput = ref('');
+    const passwordLoginInput = ref('');
+    const emailRegeistInput = ref('');
+    const passwordRegeistInput = ref('');
+    const verifyCodeInput = ref('');
 
     //是否正在登录状态，为否则为正在注册.value
     const isInLoginWindow = ref(true);
@@ -239,13 +251,28 @@
     const mouseLeaveRegisterButton = () =>{
         isMouseOnRegisterButton.value = false;
     }
+    const encryptStringSHA256 = (originString) =>{ 
+        return CryptoJS.SHA256(originString).toString(CryptoJS.enc.Hex);
+    }
     //关闭窗口
     const closeWindow = () =>{
         store.commit('switchLoggingState');
     }
     //点击按钮切换登录注册界面
     const switchLoginAndRegister = () =>{
+        var middleContainer = document.getElementById("middle_container");
+        var scrollArea = document.getElementById("scroll_area");
         isInLoginWindow.value = !isInLoginWindow.value;
+        if(isInLoginWindow.value)
+        {
+            scrollArea.scrollLeft = 0;
+            middleContainer.style = "height: 220px";
+        }
+        else
+        {
+            scrollArea.scrollLeft = 400;
+            middleContainer.style = "height: 280px";
+        }
     }
     //每次递归让timer-1秒
     const timerSubOneSecond = (timer,timeRemainingName) =>{
@@ -260,8 +287,24 @@
     }
     //发送确认邮件
     const sendVerifyEmail = () =>{
+        if((!emailRegeistInput.value.includes('@')) || emailRegeistInput.value.length < 6)
+            return;
         if(canSendVerifyCode()){
-            console.log("发了个邮件");
+            console.log(url.VERIFY_EMAIL);
+            axios.post(url.VERIFY_EMAIL,{
+                "token": "string",
+                "questClass": 0,
+                "email": emailRegeistInput.value
+            })
+            .then(function (response) {
+                // 请求成功，处理响应数据
+                console.log(response.data);
+                store.commit('setLoginData',response.data.token);
+            })
+            .catch(function (error) {
+                // 请求失败，处理错误
+                console.error(error);
+            });
             store.commit('setEmailTimerRamainingTime');
             timerSubOneSecond(emailSenderTimer.value,'emailSenderTimeRemaining');
             emailSenderText.value = '重新发送';
@@ -272,11 +315,41 @@
     }
     //点击enter按钮发起登录或注册请求
     const loginQuest = () =>{
+        var pwd = '';
         if(isInLoginWindow.value){
-            console.log("登录请求");
+            pwd = encryptStringSHA256(passwordLoginInput.value);
+            axios.put(url.LOGIN,{
+                "email":emailLoginInput.value,
+                "password":pwd
+            })
+            .then(function(response) {
+                var jwtToken = response.data.token;
+                store.commit('setLoginData',{token : jwtToken});
+                localStorage.setItem("arekat_v1_token",jwtToken);
+                window.location.reload();
+            })
+            .catch(function(error) {
+                alert(error);
+            })
         }
         else{
-            console.log("注册请求");
+            pwd = encryptStringSHA256(passwordRegeistInput.value);
+            console.log(pwd);
+            axios.post(url.REGIST,{
+                "email":emailRegeistInput.value,
+                "userName":emailRegeistInput.value,
+                "password":pwd,
+                "emailKey":verifyCodeInput.value
+            })
+            .then(function() {
+                alert("Regeist success!");
+                setTimeout(()=>{
+                    window.location.reload();
+                },2000);
+            })
+            .catch(function(error) {
+                alert(error.response.data);
+            })
         }
     }
 </script>

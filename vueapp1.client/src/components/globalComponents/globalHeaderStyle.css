@@ -43,6 +43,7 @@
     cursor: pointer;
     color: black;
     user-select: none;
+    text-decoration: none;
 }
 .divide_line_dropdown_menu{
     width: 50%;
@@ -56,13 +57,6 @@
     margin: 0 6px;
 }
 
-.drop_fade-enter-active,.drop_fade-leave-active {
-    transition: all 0.2s ease;
-}
-.drop_fade-enter-from,.drop_fade-leave-to {
-    opacity: 0;
-    top: 34px;
-}
 .clear_float::before,.clear_float::after{
     content: "";
     display: table;

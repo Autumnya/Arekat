@@ -152,8 +152,6 @@ L:\Projects\Arekat\VueApp1.Server\obj\Debug\net8.0\Arekat.Server.MvcApplicationP
 L:\Projects\Arekat\VueApp1.Server\obj\Debug\net8.0\Arekat.Server.dll
 L:\Projects\Arekat\VueApp1.Server\obj\Debug\net8.0\refint\Arekat.Server.dll
 L:\Projects\Arekat\VueApp1.Server\obj\Debug\net8.0\Arekat.Server.pdb
-L:\Projects\Arekat\VueApp1.Server\bin\Debug\net8.0\appsettings.Development.json
-L:\Projects\Arekat\VueApp1.Server\bin\Debug\net8.0\appsettings.json
 L:\Projects\Arekat\VueApp1.Server\bin\Debug\net8.0\spa.proxy.json
 L:\Projects\Arekat\VueApp1.Server\bin\Debug\net8.0\Arekat.Server.exe
 L:\Projects\Arekat\VueApp1.Server\bin\Debug\net8.0\Arekat.Server.deps.json
@@ -284,3 +282,7 @@ L:\Projects\Arekat\VueApp1.Server\obj\Debug\net8.0\scopedcss\bundle\Arekat.Serve
 L:\Projects\Arekat\VueApp1.Server\obj\Debug\net8.0\Arekat.S.23399A34.Up2Date
 L:\Projects\Arekat\VueApp1.Server\obj\Debug\net8.0\Arekat.Server.genruntimeconfig.cache
 L:\Projects\Arekat\VueApp1.Server\obj\Debug\net8.0\ref\Arekat.Server.dll
+L:\Projects\Arekat\VueApp1.Server\bin\Debug\net8.0\Zack.EFCore.Batch.MSSQL_NET8.dll
+L:\Projects\Arekat\VueApp1.Server\bin\Debug\net8.0\Zack.EFCore.Batch_NET8.dll
+L:\Projects\Arekat\VueApp1.server\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+L:\Projects\Arekat\VueApp1.server\bin\Debug\net8.0\Bogus.dll

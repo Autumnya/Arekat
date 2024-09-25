@@ -10,7 +10,7 @@
 <style scoped>
     @font-face {
         font-family: "Fino-Title-Bold";
-        src: url("../../../src/assets/fonts/fino-title-bold.ttf");
+        src: url("/assets/fonts/fino-title-bold.ttf");
     }
 
     #main_logo{

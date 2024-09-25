@@ -60,9 +60,10 @@
         margin: 12px auto;
     }
     .song_item{
-        padding: 0px 12px;
+        padding: 0px 16px;
         cursor: pointer;
         justify-content: space-between;
+        color: rgb(50,50,50);
     }
     .song_item:hover{
         text-decoration: underline;
@@ -87,17 +88,83 @@
 </style>
 
 <script setup>
+    import { ref,onMounted,onUnmounted } from 'vue';
+    import { url } from '@/api';
     import router from '@/router';
+    import axios from 'axios';
+    import { useRoute } from 'vue-router';
+
+    const route = useRoute();
+    const artistInfoJsonObject = ref({});
+    const artistSongsJsonObject = ref({songs:[]});
+    const songPage = ref(0);
+    const songPageLength = ref(30);
+    const atBottom = ref(false);
+
+    axios.get(`${url.ARTIST}${route.params.artistId}`)
+    .then(response=>{
+        artistInfoJsonObject.value = response.data;
+    })
+    .catch(error=>{
+        console.log(error);
+    })
+
+    axios.get(`${url.SONGLIST}`,{
+        params:{
+            "artistId":`${route.params.artistId}`,
+            "startIndex":songPage.value * songPageLength.value,
+            "getAmount":songPageLength.value
+        }
+    })
+    .then(response=>{
+        artistSongsJsonObject.value.songs.push(...response.data.songs);
+    })
+    .catch(error=>{
+        alert(error);
+    })
 
     const gotoSongInfo = (aimSongId) =>{
         router.push({name:"song",params:{songId:aimSongId}});
     }
 
-    var artistInfoJsonObject = {
-        "artistName":"Camellia",
-        "artistPicSrc":"../../assets/default/test_song_cover.jpg",
-        "songAmount":28
+    // 检测是否滚动到页面底部的函数
+    const checkScroll = () => {
+        const scrollPosition = window.scrollY + window.innerHeight; // 当前的滚动位置
+        const pageHeight = document.documentElement.scrollHeight; // 页面总高度
+        // 判断是否滚动到页面底部
+        if (scrollPosition >= pageHeight - 10) { // 给一点偏差
+            atBottom.value = true;
+            if(artistSongsJsonObject.value.songs.length < artistInfoJsonObject.value.songAmount){
+                getChartsNextPage();
+            }
+        } else {
+            atBottom.value = false;
+        }
+    };
+    const getChartsNextPage = () =>{
+        axios.get(url.CHARTLIST,{
+            params:{
+                "artistId":`${route.params.artistId}`,
+                "startIndex":artistSongsJsonObject.value.songs.length,
+                "getAmount":songPageLength.value
+            }
+        })
+        .then(response=>{
+            artistSongsJsonObject.value.charts.push(response.charts);
+        })
+        .catch(error=>{
+            alert(error);
+        })
     }
+    // 在组件挂载时，添加 scroll 事件监听
+    onMounted(() => {
+        window.addEventListener('scroll', checkScroll);
+    });
+    // 在组件卸载时，移除 scroll 事件监听
+    onUnmounted(() => {
+        window.removeEventListener('scroll', checkScroll);
+    });
+    /*
     //每次最多查30个
     var artistSongsJsonObject = {
         songs:[
@@ -271,4 +338,5 @@
             },
         ]
     }
+    */
 </script>

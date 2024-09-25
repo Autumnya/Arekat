@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Arekat.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+12821ccddd53e09a77e08e7e923e9beacf1fcc46")]
 [assembly: System.Reflection.AssemblyProductAttribute("Arekat.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Arekat.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
